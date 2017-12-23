@@ -11,7 +11,7 @@
     "autoload": {
 		"files": ["vardumper/helpers.php"],
 		"psr-4": {
-			"HugeFan\\VarDumper\\": "vardumper/"
+			"HugeFan\\VarDumper\\": "src/"
 		}
 	},
 
