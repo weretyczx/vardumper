@@ -1,0 +1,25 @@
+{
+    "name": "hugefan/vardumper",
+    "description": "Resolve Chrome 61.0.3163.91 dd() could not display well",
+    "type": "plugin",
+    "require": {
+        "symfony/var-dumper": "^3.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.0"
+    },
+    "autoload": {
+		"files": ["vardumper/helpers.php"],
+		"psr-4": {
+			"HugeFan\\VarDumper\\": "vardumper/"
+		}
+	},
+
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Huge Fan",
+            "email": "weretyczx@gmail.com"
+        }
+    ]
+}
