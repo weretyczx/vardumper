@@ -1,19 +1,27 @@
 <?php
 
-use HugeFan\VarDumper\Tracker;
-use HugeFan\VarDumper\Vardumper;
+if (!function_exists('dd')) {
+    function dd(...$args)
+    {
+        http_response_code(500);
 
-if (! function_exists('ddd')) {
-
-	function ddd ($var)
-	{
-		// Resolve Chrome dd() fail
-		http_response_code(500);
-
-		 array_map(function ($x) {
-            (new VarDumper)->dump($x);
-        }, func_get_args());
+        foreach ($args as $x) {
+            (new Weretyczx\Vardumper\Dumper)->dump($x);
+        }
 
         die();
-	}
+    }
+}
+
+if (!function_exists('d')) {
+    function d(...$args)
+    {
+        http_response_code(500);
+
+        foreach ($args as $x) {
+            (new Weretyczx\Vardumper\Dumper)->dump($x);
+        }
+
+        die();
+    }
 }

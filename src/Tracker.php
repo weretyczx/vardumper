@@ -1,48 +1,43 @@
 <?php
 
-namespace HugeFan\VarDumper;
+namespace Weretyczx\Vardumper;
 
 class Tracker
 {
-	protected $trace = [];
+    /**
+     *    Debug info
+     *    @var array
+     */
+    protected $debug = [];
 
-	protected $message = " Dump at %s Line: %u " ;
+    public function __construct()
+    {
+        //  Get last trace
+        $this->debug = array_pop(debug_backtrace());
+    }
 
-	public function __construct()
-	{
-		$this->trace = $this->getTracMessage(debug_backtrace());
-	}
+    /**
+     *    trace position info
+     *    @return [type] [description]
+     */
+    public function trace() : string
+    {
+        return '👨🏻‍💻 '.
+                $this->getPathLayer($this->debug['file']).
+                ' : '.
+                $this->debug['line'];
+    }
 
-	public function printMessage()
-	{
-		echo sprintf($this->message,
-			$this->trace['file'],
-			$this->trace['line']
-		);
-	}
-
-	private function getTracMessage($traces)
-	{
-		foreach ($traces as $key => $trace) {
-
-			if($this->isCallerTrace($trace)){
-
-				return $trace;
-			}
-		}
-	}
-
-	private function isCallerTrace($value)
-	{
-		return isset($value['function']) && ($value['function'] == 'ddd');
-	}
-
-	private function printTrace($data = null)
-	{
-		$data = $data ? $data : $this->trace;
-		echo '<pre>';
-		var_dump($data);
-		echo '</pre>';
-	}
-
+    /**
+     *    Get path
+     *    @param  [type]  $path  [description]
+     *    @param  integer $layer [description]
+     *    @return [type]         [description]
+     */
+    private function getPathLayer($path, $layer = 3)
+    {
+        $path = explode('/', $path);
+        $path = array_slice($path, (-1 * $layer), $layer, true);
+        return implode('/', $path);
+    }
 }

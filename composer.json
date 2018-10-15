@@ -1,24 +1,23 @@
 {
     "name": "weretyczx/vardumper",
     "description": "Resolve Chrome 61.0.3163.91 dd() could not display well",
-    "type": "plugin",
+    "keywords": ["dump", "debug"],
+    "type": "library",
+    "minimum-stability": "dev",
     "require": {
-        "symfony/var-dumper": "^3.0"
-    },
-    "require-dev": {
-        "symfony/var-dumper": "^3.0"
+        "symfony/var-dumper": "^4.1"
     },
     "autoload": {
-		"files": ["vardumper/helpers.php"],
+		"files": ["src/helpers.php"],
 		"psr-4": {
-			"HugeFan\\VarDumper\\": "src/"
+			"Weretyczx\\Vardumper\\": "src/"
 		}
 	},
 
     "license": "MIT",
     "authors": [
         {
-            "name": "Huge Fan",
+            "name": "HugeFan",
             "email": "weretyczx@gmail.com"
         }
     ]

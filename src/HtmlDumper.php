@@ -1,6 +1,5 @@
 <?php
-
-namespace HugeFan\VarDumper\Dumper;
+namespace Weretyczx\Vardumper;
 
 use Symfony\Component\VarDumper\Dumper\HtmlDumper as SymfonyHtmlDumper;
 
