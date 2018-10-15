@@ -1,5 +1,5 @@
 {
-    "name": "hugefan/vardumper",
+    "name": "weretyczx/vardumper",
     "description": "Resolve Chrome 61.0.3163.91 dd() could not display well",
     "type": "plugin",
     "require": {
