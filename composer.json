@@ -5,7 +5,8 @@
     "type": "library",
     "minimum-stability": "dev",
     "require": {
-        "symfony/var-dumper": "^4.1"
+        "symfony/var-dumper": "^4.1",
+        "funkjedi/composer-include-files": "^1.0"
     },
     "autoload": {
 		"files": ["src/helpers.php"],
@@ -13,12 +14,16 @@
 			"Weretyczx\\Vardumper\\": "src/"
 		}
 	},
-
     "license": "MIT",
     "authors": [
         {
             "name": "HugeFan",
             "email": "weretyczx@gmail.com"
         }
-    ]
+    ],
+    "extra": {
+        "include_files": [
+            "src/helpers.php"
+        ]
+    }
 }
