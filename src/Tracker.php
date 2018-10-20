@@ -10,14 +10,31 @@ class Tracker
      */
     protected $debug = [];
 
+    protected $functions = ['dd', 'd'];
+
     public function __construct()
     {
-        //  Get last trace
-        $this->debug = array_pop(debug_backtrace());
+        //  Get trace
+        $this->debug = $this->debugInfo();
     }
 
     /**
-     *    trace position info
+     *    trace info
+     *    @return [type] [description]
+     */
+    private function debugInfo()
+    {
+        $info = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+
+        foreach ($info as $key => $trace) {
+            if (in_array($trace['function'], $this->functions)) {
+                return $trace;
+            }
+        }
+    }
+
+    /**
+     *    trace position message
      *    @return [type] [description]
      */
     public function trace() : string

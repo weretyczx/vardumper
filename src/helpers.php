@@ -1,27 +1,25 @@
 <?php
 
+use Weretyczx\Vardumper\Dumper;
+
 if (!function_exists('dd')) {
     function dd(...$args)
     {
-        http_response_code(500);
-
         foreach ($args as $x) {
-            (new Weretyczx\Vardumper\Dumper)->dump($x);
+            (new Dumper)->dump($x);
         }
 
-        die();
+        return $args;
     }
 }
 
 if (!function_exists('d')) {
     function d(...$args)
     {
-        http_response_code(500);
-
         foreach ($args as $x) {
-            (new Weretyczx\Vardumper\Dumper)->dump($x);
+            (new Dumper)->dump($x);
         }
 
-        die();
+        exit(1);
     }
 }
