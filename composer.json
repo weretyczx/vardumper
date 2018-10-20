@@ -4,7 +4,7 @@
     "keywords": ["dump", "debug"],
     "type": "package",
     "require": {
-        "symfony/var-dumper": "^4.1",
+        "symfony/var-dumper": "~4.0",
         "funkjedi/composer-include-files": "^1.0"
     },
     "version": "v2.0.0",
