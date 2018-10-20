@@ -2,12 +2,12 @@
     "name": "weretyczx/vardumper",
     "description": "Resolve Chrome 61.0.3163.91 dd() could not display well",
     "keywords": ["dump", "debug"],
-    "type": "library",
-    "minimum-stability": "dev",
+    "type": "package",
     "require": {
         "symfony/var-dumper": "^4.1",
         "funkjedi/composer-include-files": "^1.0"
     },
+    "version": "v2.0.0",
     "autoload": {
 		"files": ["src/helpers.php"],
 		"psr-4": {
